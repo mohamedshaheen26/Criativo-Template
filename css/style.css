@@ -19,6 +19,7 @@ html {
 
 body {
   font-family: "Cairo", sans-serif;
+  background-color: #0c0c0c;
 }
 
 ul {
@@ -75,12 +76,13 @@ a {
 header {
   background-color: #151515;
   color: white;
-  height: 100px;
 }
 
 header .container {
+  position: relative;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 header .logo {
@@ -88,7 +90,6 @@ header .logo {
 }
 
 header .menu-list {
-  padding: 0 35px;
   display: flex;
   gap: 35px;
 }
@@ -103,25 +104,83 @@ header .menu-list li a:hover {
   color: var(--main-color);
 }
 
-header .search {
+.menu-list .search {
   margin-top: 5px;
-}
-
-header .search a {
   color: var(--main-color);
   font-size: 18px;
+}
+
+header .menu-bar {
+  display: none;
+  font-size: 25px;
+}
+
+@media (max-width: 991px) {
+  header .container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    justify-content: center;
+  }
+  header .logo {
+    text-align: center;
+  }
+}
+
+@media (max-width: 767px) {
+  header .logo {
+    text-align: left;
+  }
+
+  header .logo img {
+    width: 150px;
+  }
+
+  header .menu-list {
+    gap: 15px;
+    position: absolute;
+    top: 15px;
+    right: 0;
+    left: 0;
+    padding: 20px;
+    justify-content: center;
+    z-index: 9999;
+    background-color: #15211e;
+    z-index: -11111;
+  }
+
+  header .menu-list li {
+    font-size: 15px;
+  }
+
+  header .menu-bar {
+    cursor: pointer;
+    display: flex;
+  }
+
+  header .menu-bar:hover + .menu-list {
+    top: 79px;
+    z-index: 9999;
+    transition: 0.4s;
+  }
+}
+
+@media (max-width: 575px) {
+  header .menu-list li {
+    font-size: 11px;
+  }
 }
 /* End Header */
 
 /* Start Landing */
 .landing {
   position: relative;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 107px);
   color: white;
   overflow: hidden;
 }
 
-.overlay {
+.landing::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -132,7 +191,7 @@ header .search a {
     #0c0c0c 0%,
     #0c0c0c 50%,
     #0c0c0c 50%,
-    #1d3630 100%
+    rgb(29, 54, 48, 1) 100%
   );
   z-index: -1;
 }
@@ -140,12 +199,11 @@ header .search a {
 .landing .container {
   display: flex;
   justify-content: center;
+  padding-top: 100px;
 }
 
 .landing .text-content {
-  max-width: 700px;
-  text-align: left;
-  padding-top: 100px;
+  width: 55%;
   position: relative;
   z-index: 2;
 }
@@ -172,6 +230,7 @@ header .search a {
 
 .text-content p {
   color: #adadad;
+  font-size: 15px;
   line-height: 1.6;
   margin-bottom: 40px;
   padding-right: 160px;
@@ -185,7 +244,7 @@ header .search a {
 .btn-about .play-btn {
   width: 75px;
   height: 75px;
-  background-color: #14b8a6;
+  background-color: var(--main-color);
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -248,7 +307,6 @@ header .search a {
   margin-bottom: 40px;
   padding-bottom: 15px;
   position: relative;
-
   width: fit-content;
 }
 
@@ -268,32 +326,58 @@ header .search a {
   margin: 0;
 }
 
-.image-content {
-  flex: 1;
+.landing .image-content {
+  width: 45%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
-
   position: relative;
   z-index: 2;
 }
 
-.image-content img {
-  max-width: 100%;
+.landing .image-content img {
+  width: 650px;
+  bottom: 230px;
+  right: -130px;
+  position: relative;
+  z-index: 2;
 }
 
-@media (min-width: 768px) {
-  .container {
-    flex-direction: row;
+@media (max-width: 768px) {
+  .landing .image-content {
+    display: none;
   }
 
-  .text-content {
-    padding-right: 20px;
+  .landing .text-content {
+    width: 100%;
+    text-align: center;
   }
 
-  .image-content {
-    margin-bottom: 0;
+  .landing .text-content h1 {
+    font-size: 45px;
+  }
+
+  .landing .text-content .main-title::before {
+    display: none;
+  }
+
+  .landing .text-content p {
+    padding-right: 0;
+  }
+
+  .landing .text-content .btn-about {
+    justify-content: center;
+  }
+
+  .landing .text-content .btn-about .btn-about-text {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .landing .text-content h1 {
+    font-size: 30px;
   }
 }
 /* End Landing */
