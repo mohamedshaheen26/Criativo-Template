@@ -199,11 +199,10 @@ header .menu-bar {
 .landing .container {
   display: flex;
   justify-content: center;
-  padding-top: 100px;
+  padding-top: 85px;
 }
 
 .landing .text-content {
-  width: 55%;
   position: relative;
   z-index: 2;
 }
@@ -326,22 +325,14 @@ header .menu-bar {
   margin: 0;
 }
 
-.landing .image-content {
-  width: 45%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-  position: relative;
-  z-index: 2;
+.landing .image-content img {
+  width: 145%;
 }
 
-.landing .image-content img {
-  width: 650px;
-  bottom: 230px;
-  right: -130px;
-  position: relative;
-  z-index: 2;
+@media (max-width: 992px) {
+  .landing .text-content h1 {
+    font-size: 45px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -355,7 +346,7 @@ header .menu-bar {
   }
 
   .landing .text-content h1 {
-    font-size: 45px;
+    font-size: 35px;
   }
 
   .landing .text-content .main-title::before {
