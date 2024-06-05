@@ -228,7 +228,7 @@ header .menu-bar {
   font-size: 70px;
   font-weight: 700;
   text-transform: uppercase;
-  line-height: 1;
+  line-height: 1.1;
 }
 
 .landing .text-content p {
@@ -350,10 +350,6 @@ header .menu-bar {
 
   .landing .text-content h1 {
     font-size: 35px;
-  }
-
-  .landing .text-content .main-title::before {
-    display: none;
   }
 
   .landing .text-content p {
@@ -492,3 +488,4 @@ header .menu-bar {
     padding: 0;
   }
 }
+/* End Services */
