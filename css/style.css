@@ -1,6 +1,7 @@
 :root {
   --transition: 0.4s;
   --main-color: #5cd2b9;
+  --text-color: #adadad;
 }
 
 /* Start Global Rules */
@@ -20,6 +21,7 @@ html {
 body {
   font-family: "Cairo", sans-serif;
   background-color: #0c0c0c;
+  color: white;
 }
 
 ul {
@@ -30,6 +32,10 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+p {
+  color: #adadad;
 }
 
 .container {
@@ -58,24 +64,36 @@ a {
   }
 }
 
+.sub-title {
+  color: var(--main-color);
+  letter-spacing: 3px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
 .main-title {
   position: relative;
+  margin-bottom: 45px;
 }
 
 .main-title::before {
   content: "";
   position: absolute;
   bottom: -25px;
-  width: 65px;
+  width: 95px;
   height: 3px;
   background-color: var(--main-color);
+}
+
+.main-title span {
+  color: var(--main-color);
 }
 /* End Global Rules */
 
 /* Start Header */
 header {
   background-color: #151515;
-  color: white;
 }
 
 header .container {
@@ -175,7 +193,6 @@ header .menu-bar {
 .landing {
   position: relative;
   height: calc(100vh - 107px);
-  color: white;
   overflow: hidden;
 }
 
@@ -207,40 +224,26 @@ header .menu-bar {
   z-index: 2;
 }
 
-.text-content h4 {
-  color: var(--main-color);
-  letter-spacing: 3px;
-  font-weight: 600;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-
-.text-content h1 {
-  font-size: 65px;
+.landing .text-content h1 {
+  font-size: 70px;
   font-weight: 700;
   text-transform: uppercase;
   line-height: 1;
-  margin-bottom: 45px;
 }
 
-.text-content h1 span {
-  color: var(--main-color);
-}
-
-.text-content p {
-  color: #adadad;
+.landing .text-content p {
   font-size: 15px;
   line-height: 1.6;
   margin-bottom: 40px;
   padding-right: 160px;
 }
 
-.btn-about {
+.landing .btn-about {
   display: flex;
   margin-bottom: 20px;
 }
 
-.btn-about .play-btn {
+.landing .btn-about .play-btn {
   width: 75px;
   height: 75px;
   background-color: var(--main-color);
@@ -253,7 +256,7 @@ header .menu-bar {
   cursor: pointer;
 }
 
-.play-btn::before {
+.landing .play-btn::before {
   content: "";
   position: absolute;
   top: -5px;
@@ -265,7 +268,7 @@ header .menu-bar {
   animation: pulsate 1s infinite;
 }
 
-.play-btn::after {
+.landing .play-btn::after {
   content: "";
   position: absolute;
   top: -10px;
@@ -289,15 +292,15 @@ header .menu-bar {
   }
 }
 
-.play-btn i {
+.landing .play-btn i {
   font-size: 22px;
 }
 
-.btn-about .btn-about-text {
+.landing .btn-about .btn-about-text {
   padding-top: 25px;
 }
 
-.btn-about h5 {
+.landing .btn-about h5 {
   font-weight: 600;
   margin: 0;
   font-size: 16px;
@@ -309,7 +312,7 @@ header .menu-bar {
   width: fit-content;
 }
 
-.btn-about h5::after {
+.landing .btn-about h5::after {
   content: "";
   position: absolute;
   top: 100%;
@@ -320,7 +323,7 @@ header .menu-bar {
   margin-top: 10px;
 }
 
-.btn-about p {
+.landing .btn-about p {
   color: var(--main-color);
   margin: 0;
 }
@@ -372,3 +375,120 @@ header .menu-bar {
   }
 }
 /* End Landing */
+
+/* End Services */
+.services {
+  background-color: #000;
+}
+
+.services .container {
+  display: flex;
+  flex-direction: row;
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+
+.services .text-content {
+  padding-top: 35px;
+  width: 85%;
+}
+
+.services .text-content h1 {
+  font-size: 55px;
+}
+
+.services .text-content p {
+  margin: 20px 0;
+  line-height: 1.6;
+  padding-right: 100px;
+}
+
+.services .text-content .view-all-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 25px;
+  background-color: #5cd2b9;
+  color: white;
+}
+
+.services .text-content .view-all-button:hover {
+  background-color: #55b9a3;
+}
+
+.services .cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  width: 100%;
+  height: 480px;
+}
+
+.services .cards-container .col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.services .cards-container .col:first-child {
+  justify-content: flex-start;
+}
+
+.services .cards-container .col:last-child {
+  justify-content: flex-end;
+}
+
+.services .card {
+  background: linear-gradient(
+    to top,
+    rgb(29, 54, 48, 1) 1%,
+    rgb(2, 5, 5) 90%,
+    rgb(0, 0, 0, 1) 100%
+  );
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.services .cards-container .col:first-child .card:first-child,
+.services .cards-container .col:last-child .card:last-child {
+  background: #0c0c0c;
+}
+
+.services .card-icon img {
+  width: 70px;
+  height: 70px;
+  color: #00d8c0;
+  margin-bottom: 10px;
+}
+
+.services .card-title {
+  font-size: 1.5em;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.services .card-description {
+  line-height: 1.7;
+}
+
+@media (max-width: 1200px) {
+  .services .cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 991px) {
+  .services .container {
+    flex-direction: column;
+  }
+  .services .text-content {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .services .text-content p {
+    padding: 0;
+  }
+}
