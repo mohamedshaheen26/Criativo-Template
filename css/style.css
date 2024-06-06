@@ -405,6 +405,7 @@ header .menu-bar {
   padding: 15px 25px;
   background-color: #5cd2b9;
   color: white;
+  transition: var(--transition);
 }
 
 .services .text-content .view-all-button:hover {
@@ -489,3 +490,54 @@ header .menu-bar {
   }
 }
 /* End Services */
+
+/* Start About Us */
+.about-us {
+}
+
+.about-us .container {
+  display: flex;
+  flex-direction: row-reverse;
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+
+.about-us .text-content {
+  padding-top: 35px;
+  width: 85%;
+}
+
+.about-us .text-content h1 {
+  font-size: 55px;
+}
+
+.about-us .text-content p {
+  margin: 20px 0;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.about-us .cards-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 100%;
+}
+
+.about-us .cards-container .card {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.about-us .cards-container .card .card-icon {
+  width: 70px;
+  height: 70px;
+  color: #00d8c0;
+  margin-bottom: 10px;
+}
+
+.about-us .cards-container .card .card-icon img {
+  width: 100%;
+  height: 100%;
+}
