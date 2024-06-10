@@ -489,6 +489,12 @@ header .menu-bar {
     padding: 0;
   }
 }
+
+@media (max-width: 475px) {
+  .services .cards-container {
+    height: auto;
+  }
+}
 /* End Services */
 
 /* Start About Us */
@@ -496,7 +502,6 @@ header .menu-bar {
   display: flex;
   flex-direction: row-reverse;
   padding-top: 80px;
-  padding-bottom: 100px;
 }
 
 .about-us .text-content {
@@ -520,7 +525,7 @@ header .menu-bar {
   gap: 20px;
   width: 100%;
   margin-left: 20px;
-  padding-top: 35px;
+  padding: 35px 0 40px;
 }
 
 .about-us .cards-container .card {
@@ -555,6 +560,7 @@ header .menu-bar {
 
 .about-us .image-content img {
   filter: brightness(0.8);
+  height: 100%;
 }
 
 @media (max-width: 991px) {
@@ -579,3 +585,88 @@ header .menu-bar {
   }
 }
 /* End About Us */
+
+/* Start Stats */
+.stats {
+  padding: 50px 0;
+  color: #ffffff;
+  position: relative;
+
+  overflow: hidden;
+}
+
+.stats::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0;
+  width: 85%;
+  height: 100%;
+  background-image: url(../images/state.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.stats::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to left,
+    #0c0c0c 0%,
+    #0c0c0c 20%,
+    rgb(29, 54, 48, 1) 50%,
+    rgb(29, 54, 48, 1) 50%,
+    rgb(29, 54, 48, 1) 100%
+  );
+  opacity: 0.8;
+  z-index: 0;
+}
+
+.stats .container {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  position: relative;
+  z-index: 9999;
+}
+
+.stats .stat-item {
+  text-align: center;
+}
+
+.stats .stat-icon img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.stats .stat-number {
+  color: var(--main-color);
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.stats .stat-number span {
+  color: white;
+  font-size: 30px;
+  margin-left: 5px;
+}
+
+.stat-label {
+  font-size: 1rem;
+}
+
+@media (max-width: 991px) {
+  .stats::before {
+    width: 150%;
+  }
+}
+/* End Stats */
