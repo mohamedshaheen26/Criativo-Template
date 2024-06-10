@@ -22,6 +22,8 @@ body {
   font-family: "Cairo", sans-serif;
   background-color: #0c0c0c;
   color: white;
+
+  height: 1000vh;
 }
 
 ul {
@@ -94,6 +96,11 @@ p {
 /* Start Header */
 header {
   background-color: #151515;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999999;
 }
 
 header .container {
@@ -105,6 +112,10 @@ header .container {
 
 header .logo {
   flex: auto;
+}
+
+header .logo img {
+  width: 250px;
 }
 
 header .menu-list {
@@ -831,3 +842,116 @@ header .menu-bar {
   }
 }
 /* End Logos */
+
+/* Start Why Choose Us */
+.why-choose-us {
+  padding: 70px 0;
+}
+
+.why-choose-us .container {
+  display: flex;
+  gap: 15px;
+  height: 710px;
+}
+
+.why-choose-us .text-content {
+  padding-bottom: 50px;
+}
+
+.why-choose-us h1::before {
+  display: none;
+}
+
+.why-choose-us .col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.why-choose-us .col:first-child {
+  justify-content: flex-start;
+}
+
+.why-choose-us .col:last-child {
+  justify-content: flex-end;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.why-choose-us p {
+  line-height: 1.6;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.why-choose-us ul li {
+  margin-top: 15px;
+}
+
+.why-choose-us ul li i {
+  margin-right: 10px;
+  color: var(--main-color);
+}
+
+.why-choose-us .video-content {
+  position: relative;
+  width: 560px;
+  height: 315px;
+}
+
+.why-choose-us img {
+  width: 100%;
+  height: 100%;
+
+  position: relative;
+}
+
+.why-choose-us .video-content::before {
+  content: "\f144";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 70px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  z-index: 11;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.why-choose-us .video-content:hover::before {
+  background-color: #616161;
+  opacity: 0.4;
+}
+
+@media (max-width: 1199px) {
+  .why-choose-us .video-content {
+    width: 450px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 991px) {
+  .why-choose-us .container {
+    flex-wrap: wrap;
+    height: auto;
+  }
+  .why-choose-us .container .col {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+  .why-choose-us .video-content {
+    width: 100%;
+    height: 100%;
+  }
+}
+/* End Why Choose Us */
