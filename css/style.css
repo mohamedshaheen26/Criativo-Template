@@ -492,9 +492,6 @@ header .menu-bar {
 /* End Services */
 
 /* Start About Us */
-.about-us {
-}
-
 .about-us .container {
   display: flex;
   flex-direction: row-reverse;
@@ -511,7 +508,7 @@ header .menu-bar {
   font-size: 55px;
 }
 
-.about-us .text-content p {
+.about-us .text-content .main-description {
   margin: 20px 0;
   line-height: 1.6;
   font-size: 14px;
@@ -522,22 +519,63 @@ header .menu-bar {
   flex-direction: row;
   gap: 20px;
   width: 100%;
+  margin-left: 20px;
+  padding-top: 35px;
 }
 
 .about-us .cards-container .card {
   display: flex;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
 }
 
 .about-us .cards-container .card .card-icon {
-  width: 70px;
-  height: 70px;
-  color: #00d8c0;
+  width: 100px;
+  color: var(--main-color);
   margin-bottom: 10px;
+  margin-right: 15px;
 }
 
 .about-us .cards-container .card .card-icon img {
   width: 100%;
   height: 100%;
 }
+
+.about-us .cards-container .card .card-description {
+  text-align: left;
+}
+
+.about-us .cards-container .card .card-description h5 {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.about-us .cards-container .card .card-description p {
+  line-height: 1.6;
+}
+
+.about-us .image-content img {
+  filter: brightness(0.8);
+}
+
+@media (max-width: 991px) {
+  .about-us .container {
+    flex-direction: column;
+  }
+  .about-us .text-content {
+    width: 100%;
+    text-align: center;
+  }
+  .about-us .text-content h1 {
+    font-size: 35px;
+  }
+  .about-us .image-content {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-us .cards-container {
+    flex-direction: column;
+  }
+}
+/* End About Us */
